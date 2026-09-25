@@ -4,7 +4,7 @@ A full-stack microservice-based complaint and service management platform built 
 
 ## Project Overview
 
-The Smart Complaint & Service Management Platform allows customers to raise and track complaints, employees to manage assigned complaints, managers to assign and monitor complaints, and administrators to manage users.
+The Smart Complaint & Service Management Platform allows customers to raise and track complaints, employees to manage assigned complaints, managers to assign and monitor complaints, and administrators to manage users and system operations.
 
 ## Features
 
@@ -25,6 +25,7 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 ## User Roles
 
 ### Customer
+
 - Register and login
 - Create complaints
 - View complaints
@@ -32,16 +33,19 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 - View complaint history
 
 ### Employee
+
 - View assigned complaints
 - Update complaint status
 - Manage assigned service requests
 
 ### Manager
+
 - View complaints
 - Assign complaints to employees
 - Monitor complaint status
 
 ### Admin
+
 - View users
 - Create employees
 - Create managers
@@ -51,6 +55,7 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 ## Technology Stack
 
 ### Backend
+
 - Java
 - Spring Boot
 - Spring MVC
@@ -63,6 +68,7 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 - REST APIs
 
 ### Frontend
+
 - ReactJS
 - JavaScript
 - HTML5
@@ -70,9 +76,11 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 - Tailwind CSS
 
 ### Database
+
 - MySQL
 
 ### Microservices
+
 - Eureka Server
 - API Gateway
 - User Service
@@ -80,6 +88,7 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
 - Assignment Service
 
 ### Tools
+
 - Maven
 - Postman
 - Git
@@ -110,10 +119,8 @@ The Smart Complaint & Service Management Platform allows customers to raise and 
                                                 |
                                                 v
                                         Complaint Service
+```
 
-                                        
-                                        
-                                        
 ## Repository Links
 
 | Component | Repository |
@@ -132,7 +139,7 @@ The application supports two authentication methods.
 
 ### Email and Password Authentication
 
-
+```text
 Email + Password
        |
        v
@@ -146,8 +153,11 @@ Email + Password
        |
        v
  Protected APIs
+```
 
- ##  Google OAuth2 Authentication
+### Google OAuth2 Authentication
+
+```text
 Google Login
      |
      v
@@ -161,42 +171,54 @@ Generate JWT
      |
      v
 React Frontend
+```
 
-API Gateway
+## API Gateway
 
 All frontend API requests are routed through the API Gateway.
 
+```text
 /users/**        -> User Service
 /complaints/**   -> Complaint Service
 /assignments/**  -> Assignment Service
-Database
+```
+
+## Database
+
+```text
 User Service       -> user_db
 Complaint Service  -> complaint_db
+```
 
-Application Ports
-Component	Port
-React Frontend	5173
-API Gateway	8080
-User Service	8081
-Complaint Service	8082
-Assignment Service	8083
-Eureka Server	8761
-API Testing
+## Application Ports
+
+| Component | Port |
+|---|---:|
+| React Frontend | 5173 |
+| API Gateway | 8080 |
+| User Service | 8081 |
+| Complaint Service | 8082 |
+| Assignment Service | 8083 |
+| Eureka Server | 8761 |
+
+## API Testing
 
 REST APIs were tested using Postman, including:
 
-Authentication
-User management
-Complaint management
-Complaint assignment
-Status updates
-Authorization
-Validation
-Error handling
-How to Run
+- Authentication
+- User management
+- Complaint management
+- Complaint assignment
+- Status updates
+- Authorization
+- Validation
+- Error handling
+
+## How to Run
 
 Start the services in the following order:
 
+```text
 1. MySQL
 2. Eureka Server
 3. User Service
@@ -204,44 +226,56 @@ Start the services in the following order:
 5. Assignment Service
 6. API Gateway
 7. React Frontend
-Backend
+```
+
+### Backend
 
 Each backend service can be started using Maven:
 
+```bash
 mvn spring-boot:run
-Frontend
+```
+
+### Frontend
 
 Navigate to the frontend repository and run:
 
+```bash
 npm install
 npm run dev
-Environment Variables
+```
+
+## Environment Variables
 
 Sensitive credentials are stored using environment variables and are not committed to GitHub.
 
 Example:
 
+```properties
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
 JWT_SECRET=your_jwt_secret
 GOOGLE_CLIENT_ID=your_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-Project Status
+```
+
+## Project Status
 
 The project includes:
 
-Microservice backend
-Service discovery using Eureka
-API Gateway
-JWT authentication
-Google OAuth2 authentication
-Role-based authorization
-Complaint management
-Employee assignment
-React frontend
-REST API testing
-Author
+- Microservice backend
+- Service discovery using Eureka
+- API Gateway
+- JWT authentication
+- Google OAuth2 authentication
+- Role-based authorization
+- Complaint management
+- Employee assignment
+- React frontend
+- REST API testing
 
-Arifunisha
+## Author
+
+**Arifunisha**
 
 B.Tech Computer Science & Engineering
